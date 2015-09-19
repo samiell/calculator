@@ -6,8 +6,6 @@
 */
 import java.util.Scanner;
 
-import java.lang.Math;
-
 public class calc{
 
 	//Perform Operation
@@ -22,6 +20,7 @@ public class calc{
 		System.out.println("Press '5' for Modulus:");
 		System.out.println("Press '6' for Average:");
 		System.out.println("Press '7' for Square Root:");
+		System.out.println("Press '8' for Power:");
 		System.out.println("=========================================");
 
 		Scanner in = new Scanner(System.in);
@@ -116,7 +115,20 @@ public class calc{
 			System.out.println("=========================================");
 			double a = in.nextInt();
 
-			sqroot(a);
+			squareRoot(a);
+
+		}	else if (operation == 8) {
+
+				//First Input
+			System.out.println("Enter Number:");
+			System.out.println("=========================================");
+			double a = in.nextInt();
+
+			//Second Input
+			System.out.println("Enter Second Number:");
+			int b = in.nextInt();	
+
+			power(a,b);
 		}	
 		
 	} 
@@ -168,18 +180,35 @@ public class calc{
 	//Average
 	public static void average(int a, int b){
 
-		double average = (a + b)/2;
+		float average = (a/2) + (b/2);
 		System.out.println("The Average: " + average);
 
 	}
 
 	//Square Root
-	public static void sqroot(double a){
+	public static void squareRoot(double a){
 
-		double sqroot = Math.sqrt(a);
-		System.out.println("The Square Root is: " + sqroot);
+		double sqRoot = a;
+			sqRoot = 1;
+		for( int i = 0; i < a*a; i++){
+  			 sqRoot = 0.5 * ( sqRoot + a / sqRoot);
+ 	 	}
+
+ 	 		float squareRoot = (float) sqRoot;
+		System.out.println("The Square Root is: " + squareRoot);
 
 	} 
+
+	//Power
+	public static void power(double a, int b){
+		float	power = 1;
+		for (int i=1; i<=b; i++) {
+		 power *= a ;
+		}
+		
+		System.out.println("The Power is: " + power);
+
+	}
 
 	
 
