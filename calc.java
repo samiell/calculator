@@ -188,8 +188,7 @@ public class calc{
 	//Square Root
 	public static void squareRoot(double a){
 
-		double sqRoot = a;
-			sqRoot = 1;
+			double	sqRoot = 1;
 		for( int i = 0; i < a*a; i++){
   			 sqRoot = 0.5 * ( sqRoot + a / sqRoot);
  	 	}
